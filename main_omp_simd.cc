@@ -752,7 +752,7 @@ main (int argc, char **argv)
     {
       if (results_buffer[i].h_val > 0.0)
         {
-          file << results_buffer[i].h_val << "," << results_buffer[i].ratio << std::endl;
+          file << results_buffer[i].h_val << "," << results_buffer[i].ratio << "," << results_buffer[i].grafakos << std::endl;
 
           std::printf ("%.6f %.15f  %.15f\n",
                        results_buffer[i].h_val,

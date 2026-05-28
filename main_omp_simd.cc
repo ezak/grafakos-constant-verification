@@ -12,7 +12,6 @@
 // Google Highway headers
 #undef HWY_TARGET_TOGGLES
 #define HWY_TARGET HWY_STATIC_TARGET
-#include <format>
 #include <hwy/contrib/math/math-inl.h>
 #include <hwy/highway.h>
 #include <sstream>

@@ -5,16 +5,15 @@
 #include <getopt.h>
 #include <iostream>
 #include <omp.h>
-#include <sstream>
 #include <string>
 #include <vector>
 
 // Google Highway headers
 #undef HWY_TARGET_TOGGLES
 #define HWY_TARGET HWY_STATIC_TARGET
+#include <format>
 #include <hwy/contrib/math/math-inl.h>
 #include <hwy/highway.h>
-#include <sstream>
 
 enum class TargetFunction
 {
@@ -180,6 +179,7 @@ f_gaussian_scalar (double h, double k)
   return std::exp (-(hk * hk));
 }
 
+
 /**
  * @brief Evaluates an unwindowed, signed power-law decay curve with static hardware safety cutoffs.
  *
@@ -226,6 +226,7 @@ f_extremal_candidate_scalar (double h, double k, double p)
   double res = std::pow (abs_hk, -1.0 / p);
   return (hk < 0.0) ? -res : res;
 }
+
 
 /**
  * @brief Calculates a specialized logarithmic scaling factor with domain boundaries.
@@ -276,6 +277,7 @@ f_extremal_scalar (double h, double k, double pi)
   double log_arg = (std::sqrt (tmp) + 1.0) / res_denom;
   return (2.0 / pi) * std::log (log_arg);
 }
+
 
 /**
  * @brief Evaluates the discrete kernel for a modified or truncated Hilbert transform.
@@ -742,13 +744,8 @@ main (int argc, char **argv)
       }
   }
 
-  std::stringstream ss;
-  ss << "out_p-" << PP
-     << "_win-" << L
-     << "_func-" << FUN
-     << "_iter-" << MAX << ".csv";
-
-  std::ofstream file (ss.str ());
+  std::string   csv_file = std::format ("out_p-{}_win-{}_func-{}_iter-{}.csv", PP, L, FUN, MAX);
+  std::ofstream file (csv_file);
 
   // Sequential Print step to guarantee sorted logs
   for (long i = 1; i < MAX; i++)
@@ -763,7 +760,7 @@ main (int argc, char **argv)
                        results_buffer[i].grafakos);
         }
     }
-  file.close ();
+
   std::cout << "Done! " << std::endl;
 
   return 0;

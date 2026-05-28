@@ -744,7 +744,7 @@ main (int argc, char **argv)
       }
   }
 
-  std::string   csv_file = std::format ("out_p-{}_win-{}_func-{}_iter-{}.csv", PP, L, FUN, MAX);
+  std::string   csv_file = std::format ("out_p-{}_win-{}_func-{}_iter-{}_g-{}.csv", PP, L, FUN, MAX, shared_grafakos);
   std::ofstream file (csv_file);
 
   // Sequential Print step to guarantee sorted logs

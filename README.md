@@ -65,9 +65,8 @@ plot "out_p-3_win-100_func-1_iter-100_g-1.7320508075688774.csv" using 1:3 with l
 ### inside gnuplot shell execute to plot the error
 ```textmate
 set datafile separator ","
-plot "error_out_p-3_win-100_func-1_iter-100_g-1.7320508075688774.csv" using 1:4 with lines, \
-"error_out_p-3_win-200_func-1_iter-100_g-1.7320508075688774.csv" using 1:4 with lines, \
-"error_out_p-3_win-300_func-1_iter-100_g-1.7320508075688774.csv" using 1:4 with lines, \
-"error_out_p-3_win-400_func-1_iter-100_g-1.7320508075688774.csv" using 1:4 with lines
-
+plot "out_p-3_win-100_func-1_iter-100_g-1.7320508075688774.csv" using 1:4 with lines, \
+"out_p-3_win-200_func-1_iter-100_g-1.7320508075688774.csv" using 1:4 with lines, \
+"out_p-3_win-300_func-1_iter-100_g-1.7320508075688774.csv" using 1:4 with lines, \
+"out_p-3_win-400_func-1_iter-100_g-1.7320508075688774.csv" using 1:4 with lines
 ```

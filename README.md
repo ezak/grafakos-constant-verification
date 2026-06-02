@@ -7,7 +7,7 @@ sudo apt install build-essential cmake ninja-build git libeigen3-dev libmpfr-dev
 # Step 2
 ### Build
 ```shell
-cmake mkdir build && cd build && cmake -G Ninja -S ..
+mkdir build && cd build && cmake -G Ninja -S .. && cmake --build .
 ```
 
 # Step 3

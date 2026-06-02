@@ -29,7 +29,7 @@ echo "--> Running Window 400"
 { time ./grafakos-constant-verification-main_omp_simd --window 400 --param 3 -f 1 -l 4000 ; } 2>&1 &&
 
 echo "--> Running Window 500"
-{ time ./grafakos-constant-verification-main_omp_simd --window 500 --param 3 -f 1 -l 500 ; } 2>&1
+{ time ./grafakos-constant-verification-main_omp_simd --window 500 --param 3 -f 1 -l 5000 ; } 2>&1
 
 echo "=== All Batches Finished ==="
 ) > output.log 2>&1 &

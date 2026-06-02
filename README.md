@@ -1,5 +1,4 @@
 # Step 1
-
 ### Install dependencies 
 ```shell
 sudo apt install build-essential cmake ninja-build git libeigen3-dev libmpfr-dev libhwy-dev
@@ -12,7 +11,7 @@ cmake mkdir build && cd build && cmake -G Ninja -S ..
 ```
 
 # Step 3
-### copy this command from with in the build directory
+### Run
 ```shell
 (
 echo "=== Starting Batch Run ==="

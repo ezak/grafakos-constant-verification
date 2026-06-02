@@ -35,6 +35,11 @@ echo "=== All Batches Finished ==="
 ) > output.log 2>&1 &
 ```
 
+### To see progress
+```shell
+tail -f output.log
+```
+
 # Step 4
 
 ### Install gnuplot
